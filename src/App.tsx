@@ -29,11 +29,13 @@ function App() {
           <VariantAside />
         </aside>
 
+        <div className="col-span-12">
+          <ArchiveMapSection />
+        </div>
+
         <ArchivesSection />
         <SignalConsole />
       </main>
-
-      <ArchiveMapSection />
       <SignalWidget />
       <WireframeCube />
     </div>

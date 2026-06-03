@@ -27,7 +27,7 @@ export function SignalConsole() {
   }, [lineIndex, reduced])
 
   return (
-    <footer id="contact" className="col-span-12 mt-20 mb-12 scroll-mt-28">
+    <footer id="contact" className="col-span-12 mt-12 mb-12 scroll-mt-28">
       <div className="window-border bg-black overflow-hidden">
         <div className="window-header px-4 py-2 flex justify-between items-center">
           <span className="mono text-xs font-bold uppercase">SIGNAL_TRANSMISSION.EXE</span>
