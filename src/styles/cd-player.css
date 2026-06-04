@@ -70,36 +70,28 @@
   width: 116px;
   height: 116px;
   box-sizing: border-box;
-  padding: 2px;
-  background: #c0c0c0;
+  padding: 0;
+  background: #000;
   border: 2px solid #fff;
   border-color: #404040 #fff #fff #404040;
 }
 
 .cd-album-art__clip {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 2px;
   overflow: hidden;
   background: #000;
-  box-shadow: inset 1px 1px 0 #404040, inset -1px -1px 0 #fff;
 }
 
 .cd-album-art__clip img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 130%;
-  height: 130%;
-  min-width: 100%;
-  min-height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   border: none;
   object-fit: cover;
-  object-position: center 42%;
-  transform: translate(-50%, -50%);
-  transform-origin: center center;
+  object-position: center center;
 }
 
 .cd-player-fields {
@@ -164,6 +156,30 @@
   padding-top: 2px;
 }
 
+.cd-now-playing {
+  font-size: 8px;
+  color: #b8ffb8;
+  letter-spacing: 0.06em;
+  margin-left: 4px;
+  animation: cd-blink 1s step-end infinite;
+}
+
+@keyframes cd-blink {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.cd-album-art--playing .cd-album-art__clip img {
+  animation: cd-art-pulse 2s ease-in-out infinite;
+}
+
+@keyframes cd-art-pulse {
+  50% {
+    filter: brightness(1.08);
+  }
+}
+
 .cd-progress-track {
   position: relative;
   width: 100%;
@@ -171,18 +187,46 @@
   background: #fff;
   border: 2px solid #fff;
   border-color: #404040 #fff #fff #404040;
+  overflow: hidden;
+}
+
+.cd-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #1084d0;
+  opacity: 0.35;
+  pointer-events: none;
 }
 
 .cd-progress-thumb {
   position: absolute;
   top: 50%;
-  left: 28%;
+  left: 0;
   width: 28px;
   height: 14px;
   background: #c0c0c0;
   border: 2px solid #404040;
   border-color: #fff #404040 #404040 #fff;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
+  transition: left 0.15s linear;
+}
+
+.cd-control-play--active {
+  border-color: #404040 #fff #fff #404040;
+  background: #a8d4ff;
+}
+
+.cd-audio-hint {
+  font-size: 8px;
+  line-height: 1.4;
+  color: #404040;
+  margin: 0;
+}
+
+.cd-audio-hint code {
+  font-size: 8px;
 }
 
 .cd-controls {

@@ -17,5 +17,10 @@ When the rigid education system forced a binary track, I engineered an integrate
   heroPath: 'C:\\USERS\\NANDINI\\HERO.EXE',
   systemLabel: 'System: NW.v01',
   copyright: '© 2025 NANDINI WADHWA. ALL RIGHTS RESERVED.',
+  cdPlayer: {
+    audioSrc: '/audio/marina-are-you-satisfied.mp3',
+    artist: 'are you satisfied (with an average life) ?',
+    track: 'MARINA',
+  },
 }
 
