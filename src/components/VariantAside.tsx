@@ -46,15 +46,22 @@ export function VariantAside() {
         </div>
       </div>
 
-      <div id="about" className="window-border bg-[#d8b4fe] text-black p-6 flex flex-col h-[176px]">
-        <div className="flex justify-between items-start mb-4">
+      <div
+        id="about"
+        className="bio-sys-window window-border bg-[#d8b4fe] text-black p-6 flex flex-col h-[248px]"
+      >
+        <div className="flex justify-between items-start shrink-0 mb-3">
           <h2 className="mono text-sm font-bold uppercase flex items-center gap-2">
             <i className="ri-user-smile-line" aria-hidden />
             Bio.sys
           </h2>
           <span className="mono text-[10px] opacity-50">VER 4.2.0</span>
         </div>
-        <p className="text-sm leading-relaxed overflow-y-auto scrollbar-custom pr-2">{site.bio}</p>
+        <div className="bio-sys-scroll-wrap flex-1 min-h-0 border-t-2 border-black/15 pt-3">
+          <p className="bio-sys-scroll text-sm leading-relaxed overflow-y-auto scrollbar-custom pr-2 h-full">
+            {site.bio}
+          </p>
+        </div>
       </div>
     </>
   )

@@ -49,6 +49,17 @@ html {
   box-shadow: 0 -4px 12px rgba(190, 24, 93, 0.12);
 }
 
+/* Bio.sys — taller body, scrollbar kept for terminal aesthetic */
+.bio-sys-scroll-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.bio-sys-scroll {
+  min-height: 7.5rem;
+  max-height: 100%;
+}
+
 /* Portrait fills circle edge-to-edge */
 .ident-portrait-img {
   object-position: center 22%;

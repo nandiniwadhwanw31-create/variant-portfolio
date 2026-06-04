@@ -9,7 +9,7 @@ import { ArchiveSystemView } from './archive/ArchiveSystemView'
 import { BackgroundNoteCard } from './BackgroundNoteCard'
 
 export function ArchiveMapSection() {
-  const [activeNodeId, setActiveNodeId] = useState<string | null>('02')
+  const [activeNodeId, setActiveNodeId] = useState<string | null>(null)
   const [imageIndexByNode, setImageIndexByNode] = useState<Record<string, number>>({
     '01': 0,
     '02': 0,
@@ -32,12 +32,6 @@ export function ArchiveMapSection() {
       ...prev,
       [noteId]: ((prev[noteId] ?? 0) + 1) % total,
     }))
-  }, [])
-
-  const handleNodeActivate = useCallback((noteId: string) => {
-    if (!archiveGalleries[noteId]) return
-    setActiveNodeId(noteId)
-    setImageIndexByNode((prev) => ({ ...prev, [noteId]: 0 }))
   }, [])
 
   const handlePreviewClick = useCallback(
@@ -80,7 +74,7 @@ export function ArchiveMapSection() {
         <span className="mono text-[10px] opacity-40">RECOVERED: 100%</span>
       </div>
 
-      <div className="archive-canvas w-full h-[min(1040px,92vh)] relative window-border bg-black/40">
+      <div className="archive-canvas w-full relative window-border bg-black/40">
         <div className="archive-canvas-inner">
           <svg className="absolute inset-0 w-full h-full pointer-events-none" aria-hidden>
             <path className="mapping-line" d="M 180 180 C 280 140, 380 280, 500 260" />
@@ -97,7 +91,6 @@ export function ArchiveMapSection() {
               gallery={archiveGalleries[note.id]}
               isActive={activeNodeId === note.id}
               activeImageIndex={imageIndexByNode[note.id] ?? 0}
-              onNodeActivate={handleNodeActivate}
               onPreviewClick={(e) => handlePreviewClick(note.id, e)}
             />
           ))}

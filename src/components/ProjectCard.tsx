@@ -46,7 +46,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <p className="mono text-[9px] text-pink-400/50 uppercase tracking-[0.2em] mb-1">
             Research Object
           </p>
-          <h4 className="serif text-xl leading-tight text-zinc-100 uppercase tracking-wide">
+          <h4 className="serif text-lg sm:text-xl leading-snug text-zinc-100 uppercase tracking-wide">
             {project.title}
           </h4>
         </div>
