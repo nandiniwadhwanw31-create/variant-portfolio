@@ -1,0 +1,234 @@
+#ghost-overlay {
+  display: none;
+  background: #0b0813;
+  backdrop-filter: blur(10px);
+}
+
+#ghost-overlay:target {
+  display: block;
+  z-index: 200;
+}
+
+.ghost-crt-scanlines {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 201;
+  background: linear-gradient(rgba(18, 16, 35, 0) 50%, rgba(0, 0, 0, 0.12) 50%);
+  background-size: 100% 3px;
+  opacity: 0.35;
+}
+
+.ghost-scroll {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+.ghost-terminate-btn {
+  border: 1px solid #ff007f;
+  background: rgba(11, 8, 19, 0.9);
+  color: #ff007f;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 12px rgba(255, 0, 127, 0.45);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.ghost-terminate-btn:hover {
+  background: #ff007f;
+  color: #0b0813;
+}
+
+.ghost-terminal {
+  position: relative;
+  background: rgba(11, 8, 19, 0.92);
+  border: 1px solid #ff007f;
+  box-shadow:
+    0 0 14px rgba(255, 0, 127, 0.45),
+    0 0 28px rgba(255, 0, 127, 0.15),
+    inset 0 0 24px rgba(255, 0, 127, 0.04);
+}
+
+.ghost-terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 0, 127, 0.45);
+  background: rgba(255, 0, 127, 0.06);
+}
+
+.ghost-terminal-meta-left {
+  font-size: 10px;
+  font-weight: 700;
+  color: #ff007f;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ghost-terminal-meta-right {
+  font-size: 10px;
+  font-weight: 700;
+  color: #ff007f;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: ghost-pulse-meta 2s ease-in-out infinite;
+}
+
+@keyframes ghost-pulse-meta {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.ghost-terminal-body {
+  padding: 0.85rem 1rem 1rem;
+  font-size: 11px;
+  line-height: 1.65;
+  color: #f8fafc;
+}
+
+.ghost-stream-line {
+  font-size: 10px;
+  color: #a5f3fc;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.ghost-divider {
+  border: none;
+  height: 1px;
+  margin: 0 0 0.85rem;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 127, 0.15),
+    rgba(255, 0, 127, 0.65) 20%,
+    rgba(255, 0, 127, 0.65) 80%,
+    rgba(255, 0, 127, 0.15)
+  );
+}
+
+.ghost-line {
+  margin: 0 0 0.4rem;
+  color: #f1f5f9;
+}
+
+.ghost-extract {
+  margin: 0.35rem 0 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid rgba(255, 0, 127, 0.35);
+  color: #e2e8f0;
+  font-style: normal;
+}
+
+.ghost-sublog {
+  margin-bottom: 0.55rem;
+}
+
+.ghost-sublog-label {
+  display: block;
+  font-size: 10px;
+  color: #ff007f;
+  margin-bottom: 0.25rem;
+}
+
+.ghost-sublog-body {
+  padding-left: 0.35rem;
+}
+
+.ghost-terminal-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #ff007f;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  padding: 0 0.05rem;
+}
+
+.ghost-section {
+  margin-bottom: 0.85rem;
+}
+
+.ghost-section:last-child {
+  margin-bottom: 0;
+}
+
+.ghost-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #a5f3fc;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.35rem;
+}
+
+.ghost-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ghost-list li {
+  position: relative;
+  padding-left: 0.85rem;
+  margin-bottom: 0.35rem;
+  color: #f1f5f9;
+}
+
+.ghost-list li::before {
+  content: '*';
+  position: absolute;
+  left: 0;
+  color: #ff007f;
+}
+
+.ghost-link {
+  color: #a5f3fc;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ghost-link:hover {
+  color: #ff007f;
+}
+
+.ghost-terminal-progress-wrap {
+  padding: 0 0.75rem 0.75rem;
+}
+
+.ghost-terminal-progress-track {
+  height: 6px;
+  background: rgba(255, 0, 127, 0.15);
+  border: 1px solid rgba(255, 0, 127, 0.35);
+  overflow: hidden;
+}
+
+.ghost-terminal-progress-fill {
+  height: 100%;
+  background: #ff007f;
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.8);
+  animation: ghost-progress-pulse 2s ease-in-out infinite;
+}
+
+@keyframes ghost-progress-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.ghost-jitter-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
