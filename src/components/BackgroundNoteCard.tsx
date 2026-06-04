@@ -1,5 +1,7 @@
 import type { CSSProperties } from 'react'
 import type { BackgroundNote } from '../data/backgroundArchive'
+import type { ArchiveNodeGallery } from '../data/archiveMedia'
+import { ArchivePhotoStack } from './archive/ArchivePhotoStack'
 import { formatArchiveText } from '../utils/formatArchiveText'
 
 const variantStyles = {
@@ -67,12 +69,25 @@ const variantStyles = {
 
 interface Props {
   note: BackgroundNote
+  gallery?: ArchiveNodeGallery
+  isActive?: boolean
+  activeImageIndex?: number
+  onNodeActivate: (noteId: string) => void
+  onPreviewClick: (e: React.MouseEvent) => void
 }
 
-export function BackgroundNoteCard({ note }: Props) {
+export function BackgroundNoteCard({
+  note,
+  gallery,
+  isActive = false,
+  activeImageIndex = 0,
+  onNodeActivate,
+  onPreviewClick,
+}: Props) {
   const styles = variantStyles[note.variant]
   const isSignal = note.variant === 'signal'
   const paragraphs = note.body.split('\n\n').filter(Boolean)
+  const hasGallery = Boolean(gallery?.images.length)
 
   const cardStyle = {
     '--archive-rotate': note.rotate,
@@ -80,9 +95,26 @@ export function BackgroundNoteCard({ note }: Props) {
 
   return (
     <article
-      className={`archive-memory-card fragment-card absolute ${note.position} ${styles.card} ${note.opacity}`}
+      className={`archive-memory-card fragment-card absolute ${note.position} ${styles.card} ${note.opacity} ${
+        isActive ? 'archive-memory-card--active' : ''
+      } ${hasGallery ? 'archive-memory-card--interactive' : ''}`}
       style={cardStyle}
       data-variant={note.variant}
+      data-note-id={note.id}
+      onClick={hasGallery ? () => onNodeActivate(note.id) : undefined}
+      onKeyDown={
+        hasGallery
+          ? (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                onNodeActivate(note.id)
+              }
+            }
+          : undefined
+      }
+      role={hasGallery ? 'button' : undefined}
+      tabIndex={hasGallery ? 0 : undefined}
+      aria-pressed={hasGallery ? isActive : undefined}
     >
       <header className={`archive-memory-card__header ${styles.header} mono`}>
         <span className="archive-memory-card__header-filename">{note.filename}</span>
@@ -92,11 +124,6 @@ export function BackgroundNoteCard({ note }: Props) {
       </header>
 
       <div className={`archive-memory-card__scroll scrollbar-custom mono ${styles.body}`}>
-        <p className={`archive-memory-card__stream ${styles.stream}`}>
-          {note.filename} // STATUS: {note.status}
-        </p>
-        <hr className="archive-memory-card__divider" aria-hidden />
-
         <p className={`archive-memory-card__extract ${styles.extract}`}>
           &quot;{note.title}&quot;
         </p>
@@ -110,8 +137,8 @@ export function BackgroundNoteCard({ note }: Props) {
         {note.showProgress && (
           <div className="archive-memory-card__progress">
             <div className={`archive-memory-card__progress-label ${styles.stream}`}>
-              <span>PARSE_STREAM</span>
-              <span>{note.progressPercent}% PARSED</span>
+              <span>PARSE</span>
+              <span>{note.progressPercent}%</span>
             </div>
             <div className={`archive-memory-card__progress-track ${styles.progressTrack}`}>
               <div
@@ -124,10 +151,19 @@ export function BackgroundNoteCard({ note }: Props) {
       </div>
 
       <footer className={`archive-memory-card__signals ${styles.signals}`}>
+        {hasGallery && gallery && (
+          <ArchivePhotoStack
+            items={gallery.images}
+            activeIndex={activeImageIndex}
+            isActive={isActive}
+            onPreviewClick={onPreviewClick}
+          />
+        )}
+
         <span className={`archive-memory-card__signals-label ${styles.signalsLabel}`}>
           {isSignal ? 'Core Protocol' : 'Signals'}
         </span>
-        <span className={`archive-memory-card__signals-text mono`}>{note.signals}</span>
+        <span className="archive-memory-card__signals-text mono">{note.signals}</span>
       </footer>
     </article>
   )

@@ -7,7 +7,7 @@
 .archive-canvas-inner {
   position: relative;
   width: 100%;
-  min-width: 1080px;
+  min-width: 1240px;
   min-height: 1040px;
   height: 100%;
 }
@@ -82,19 +82,9 @@
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.25rem;
   word-wrap: break-word;
   overflow-wrap: break-word;
-}
-
-.archive-memory-card__stream {
-  margin: 0 0 0.75rem;
-  font-size: 0.7rem;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  overflow-wrap: anywhere;
-  word-break: break-word;
 }
 
 .archive-memory-card__divider {
@@ -236,6 +226,220 @@
   );
 }
 
+/* Active node — Sonic Logic selected state */
+.archive-memory-card--active {
+  z-index: 40;
+  box-shadow:
+    4px 4px 0 #000,
+    0 0 24px rgba(216, 180, 254, 0.55),
+    0 0 40px rgba(255, 0, 127, 0.25);
+}
+
+.archive-memory-card[data-variant='lilac'].archive-memory-card--active {
+  outline: 2px solid rgba(168, 85, 247, 0.9);
+  outline-offset: 2px;
+}
+
+/* Unified IMG_PREVIEW stack — all gallery nodes */
+.archive-photo-stack {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+.archive-memory-card[data-variant='spotlight'] .archive-photo-stack,
+.archive-memory-card[data-variant='constituent'] .archive-photo-stack,
+.archive-memory-card[data-variant='signal'] .archive-photo-stack {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.archive-photo-stack__label {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.4rem;
+}
+
+.archive-photo-stack__hit {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.archive-photo-stack__frames {
+  position: relative;
+  flex-shrink: 0;
+  width: 76px;
+  height: 52px;
+}
+
+.archive-photo-stack__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 64px;
+  height: 48px;
+  border: 2px solid #000;
+  background: #1a1028;
+  box-shadow: 2px 2px 0 #000;
+  overflow: hidden;
+  transition:
+    filter 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.archive-photo-stack__frame--front {
+  box-shadow:
+    2px 2px 0 #000,
+    0 0 10px rgba(255, 0, 127, 0.35);
+}
+
+.archive-photo-stack__hit:hover .archive-photo-stack__frame--front {
+  filter: grayscale(0.35) contrast(1.02);
+}
+
+.archive-photo-stack__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(1) contrast(0.9) brightness(0.88);
+  pointer-events: none;
+}
+
+.archive-photo-stack__hint {
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  line-height: 1.3;
+  max-width: 5rem;
+}
+
+/* SYSTEM_VIEW pop-up — full color */
+.archive-system-view__chrome {
+  box-sizing: border-box;
+  border: 2px solid #a855f7;
+  background: rgba(11, 8, 19, 0.96);
+  box-shadow:
+    4px 4px 0 #000,
+    0 0 28px rgba(168, 85, 247, 0.65),
+    0 0 48px rgba(255, 0, 127, 0.2);
+  overflow: hidden;
+}
+
+.archive-system-view__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(90deg, rgba(88, 28, 135, 0.9), rgba(168, 85, 247, 0.85));
+  border-bottom: 2px solid #000;
+  color: #fff;
+}
+
+.archive-system-view__frame-count {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
+}
+
+.archive-system-view__title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.35;
+  flex: 1;
+  min-width: 0;
+}
+
+.archive-system-view__close {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  background: #d8b4fe;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.archive-system-view__close:hover {
+  background: #ff007f;
+  color: #fff;
+}
+
+.archive-system-view__body {
+  padding: 0.65rem;
+  background: #0b0813;
+}
+
+.archive-system-view__image-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.archive-system-view__image {
+  display: block;
+  width: 100%;
+  max-height: min(360px, 50vh);
+  object-fit: contain;
+  object-position: center;
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  background: #000;
+  transition: opacity 0.15s ease;
+}
+
+.archive-system-view__rotate {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #d8b4fe;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  cursor: pointer;
+  text-align: center;
+}
+
+.archive-system-view__rotate:hover {
+  background: rgba(255, 0, 127, 0.25);
+  color: #fff;
+}
+
+.archive-system-view__caption {
+  margin: 0.5rem 0 0;
+  font-size: 0.65rem;
+  line-height: 1.5;
+  color: rgba(216, 180, 254, 0.85);
+  letter-spacing: 0.03em;
+}
+
 @media (max-width: 768px) {
   .archive-canvas-inner {
     min-width: 100%;
@@ -261,5 +465,14 @@
 
   .archive-canvas-inner > svg {
     display: none;
+  }
+
+  .archive-system-view {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: min(calc(100% - 2rem), 420px) !important;
+    margin: 0 auto 1.5rem;
+    order: -1;
   }
 }
