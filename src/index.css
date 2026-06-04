@@ -20,74 +20,50 @@ html {
   }
 }
 
-/* Professor Purse–inspired ident panel */
-.purse-ident-panel {
-  border-radius: 1rem;
-  border: 3px solid #5c2d6e;
+/* Pink Word window ident panel */
+.word-ident-shell {
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.word-doc-surface {
+  background: linear-gradient(
+    165deg,
+    #fff1f7 0%,
+    #fce7f3 30%,
+    #fbcfe8 65%,
+    #f472b6 100%
+  );
+  border: 2px solid #ec4899;
   box-shadow:
-    4px 4px 0 #3b1d47,
-    inset 0 0 40px rgba(255, 255, 255, 0.35);
+    inset 0 0 32px rgba(255, 126, 185, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
-.purse-harlequin {
-  background-color: #fff5f9;
-  background-image:
-    linear-gradient(135deg, #fbcfe8 25%, transparent 25%),
-    linear-gradient(225deg, #fbcfe8 25%, transparent 25%),
-    linear-gradient(315deg, #fbcfe8 25%, transparent 25%),
-    linear-gradient(45deg, #fbcfe8 25%, transparent 25%);
-  background-size: 28px 28px;
-  background-position:
-    0 0,
-    0 14px,
-    14px -14px,
-    -14px 0;
+.word-caption {
+  background: linear-gradient(90deg, #f472b6 0%, #fbcfe8 45%, #f472b6 100%);
+  border-top: 2px solid #be185d;
+  box-shadow: 0 -4px 12px rgba(190, 24, 93, 0.12);
 }
 
-.purse-swirl {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 Q45 30 30 55 Q15 30 30 5' fill='none' stroke='%235c2d6e' stroke-width='0.5' stroke-dasharray='2 4' opacity='0.4'/%3E%3C/svg%3E");
+/* Portrait fills circle edge-to-edge */
+.ident-portrait-img {
+  object-position: center 22%;
+  transform: scale(1.18);
 }
 
-.purse-ornate-ring {
-  border: 3px solid #d4a574;
-  box-shadow:
-    0 0 0 2px #5c2d6e,
-    0 0 0 5px rgba(212, 165, 116, 0.35),
-    inset 0 0 12px rgba(255, 255, 255, 0.5);
+.ident-portrait-ring:hover .ident-portrait-img {
+  transform: scale(1.22);
+  transition: transform 0.4s ease;
 }
 
-.purse-plaque {
-  background: linear-gradient(180deg, #fce7f3 0%, #fbcfe8 100%);
-  border: 2px solid #5c2d6e;
-  border-radius: 0.75rem;
-  padding: 0.65rem 0.85rem;
-  box-shadow: 2px 2px 0 #5c2d6e;
+.ident-portrait-ring .ident-portrait-img {
+  transition: transform 0.4s ease;
 }
 
-.purse-charm {
-  font-size: 1.25rem;
-  color: #db2777;
-  text-shadow: 0 0 8px rgba(255, 126, 185, 0.8);
-  animation: charm-pulse 2s ease-in-out infinite;
-}
-
-@keyframes charm-pulse {
-  0%,
-  100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 0.85;
-  }
-  50% {
-    transform: scale(1.15) rotate(12deg);
-    opacity: 1;
-  }
-}
-
-.purse-bio-panel {
-  background: linear-gradient(145deg, #fdf2f8 0%, #f9a8d4 100%);
-  border: 3px solid #5c2d6e;
-  border-radius: 1rem;
-  box-shadow: 4px 4px 0 #3b1d47;
+.cursor-star {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 0 10px rgba(255, 126, 185, 0.55));
 }
 
 @media (prefers-reduced-motion: reduce) {

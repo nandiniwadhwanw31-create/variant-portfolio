@@ -9,8 +9,6 @@ export const site = {
   email: 'nandiniwadhwanw31@gmail.com',
   ident: 'NANDINI WADHWA',
   location: 'New Delhi, India',
-  purseTitle: 'The Pursuit of Data × Creativity',
-  purseRole: 'MATHEMATICS · RESEARCH · VENTURE INTEL',
   heroPath: 'C:\\USERS\\NANDINI\\HERO.EXE',
   systemLabel: 'System: NW.v01',
   copyright: '© 2025 NANDINI WADHWA. ALL RIGHTS RESERVED.',

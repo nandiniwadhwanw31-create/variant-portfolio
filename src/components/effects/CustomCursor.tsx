@@ -45,30 +45,28 @@ export function CustomCursor() {
 
   return (
     <motion.img
-      src="/images/cursor-sparkle.png"
+      src="/images/cursor-star-transparent.png"
       alt=""
       aria-hidden
-      className="fixed top-0 left-0 z-[300] pointer-events-none object-contain select-none"
+      className="cursor-star fixed top-0 left-0 z-[300] pointer-events-none object-contain select-none"
       style={{
         x,
         y,
         translateX: '-50%',
         translateY: '-50%',
-        width: hovering ? 44 : 32,
-        height: hovering ? 44 : 32,
-        filter: 'drop-shadow(0 0 8px rgba(255, 105, 180, 0.9)) drop-shadow(0 0 16px rgba(236, 72, 153, 0.5))',
+        width: hovering ? 48 : 36,
+        height: hovering ? 48 : 36,
       }}
       animate={
         reduced
           ? undefined
           : {
-              rotate: hovering ? [0, 18, -12, 0] : [0, 360],
-              scale: hovering ? [1, 1.15, 1.08] : [1, 1.05, 1],
+              rotate: hovering ? [0, 12, -8, 0] : [0, 360],
+              scale: hovering ? 1.15 : 1,
             }
       }
       transition={{
-        rotate: { repeat: Infinity, duration: hovering ? 0.8 : 5, ease: 'linear' },
-        scale: { repeat: Infinity, duration: 1.5, ease: 'easeInOut' },
+        rotate: { repeat: Infinity, duration: hovering ? 0.9 : 5, ease: 'linear' },
       }}
     />
   )
