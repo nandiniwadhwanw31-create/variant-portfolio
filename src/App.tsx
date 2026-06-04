@@ -21,13 +21,16 @@ function App() {
       <GhostOverlay />
       <Nav />
 
-      <main className="w-full max-w-7xl mt-24 px-8 grid grid-cols-12 gap-8 relative" id="page-home">
-        <section className="col-span-12 lg:col-span-7 flex flex-col gap-6">
+      <main
+        className="w-full max-w-7xl mt-24 px-6 sm:px-8 grid grid-cols-12 gap-6 lg:gap-8 relative items-start"
+        id="page-home"
+      >
+        <section className="col-span-12 lg:col-span-7 flex flex-col gap-6 w-full min-w-0">
           <HeroWindow />
           <CdPlayerPanel />
         </section>
 
-        <aside className="col-span-12 lg:col-span-5 flex flex-col gap-6 lg:self-stretch">
+        <aside className="col-span-12 lg:col-span-5 flex flex-col gap-6 lg:self-stretch w-full min-w-0">
           <VariantAside />
         </aside>
 

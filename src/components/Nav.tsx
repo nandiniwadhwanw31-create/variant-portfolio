@@ -7,7 +7,7 @@ export function Nav() {
         <div className="w-8 h-8 bg-purple-400 flex items-center justify-center font-bold text-black text-sm mono">
           {site.initials}
         </div>
-        <span className="mono text-xs uppercase tracking-tighter text-white">{site.systemLabel}</span>
+        <span className="mono text-xs uppercase tracking-wide text-white">{site.systemLabel}</span>
       </div>
       <div className="flex gap-4 pointer-events-auto">
         <div className="window-border bg-black px-6 py-2 mono text-xs uppercase text-white flex gap-6 items-center">

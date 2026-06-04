@@ -3,7 +3,7 @@ const track = 'MARINA'
 
 export function CdPlayerPanel() {
   return (
-    <div className="cd-player-shell w-full max-w-full" role="region" aria-label="CD Player">
+    <div className="cd-player-shell" role="region" aria-label="CD Player">
       <div className="cd-player-titlebar">
         <div className="cd-player-title-left">
           <span className="cd-player-icon" aria-hidden>
@@ -20,7 +20,9 @@ export function CdPlayerPanel() {
 
       <div className="cd-player-body">
         <div className="cd-album-art">
-          <img src="/images/album-cover.jpg" alt="Album cover" loading="lazy" />
+          <div className="cd-album-art__clip">
+            <img src="/images/album-cover.jpg" alt="Album cover" loading="lazy" />
+          </div>
         </div>
 
         <div className="cd-player-fields">

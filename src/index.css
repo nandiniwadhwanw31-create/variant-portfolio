@@ -50,10 +50,13 @@ html {
   box-shadow: 0 -4px 12px rgba(190, 24, 93, 0.12);
 }
 
-/* Bio.sys — taller body, scrollbar kept for terminal aesthetic */
+/* Bio.sys — Win95-style scroll column */
 .bio-sys-scroll-wrap {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 6px;
+  min-height: 0;
 }
 
 .bio-sys-window {
@@ -61,8 +64,91 @@ html {
 }
 
 .bio-sys-scroll {
+  flex: 1 1 auto;
+  min-width: 0;
   min-height: 8rem;
   max-height: 100%;
+  margin: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #be185d #f3e8ff;
+}
+
+.bio-sys-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.bio-sys-scroll::-webkit-scrollbar-track {
+  background: #f3e8ff;
+  border: 1px solid #9d174d;
+}
+
+.bio-sys-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f472b6, #be185d);
+  border: 1px solid #701a75;
+  border-radius: 0;
+}
+
+.bio-sys-vscroll {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 18px;
+  background: #d8b4fe;
+  border: 2px solid #000;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #404040;
+}
+
+.bio-sys-scroll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 18px;
+  padding: 0;
+  font-size: 8px;
+  line-height: 1;
+  font-family: 'JetBrains Mono', monospace;
+  color: #000;
+  background: #d8b4fe;
+  border: none;
+  border-bottom: 1px solid #9d174d;
+  cursor: pointer;
+}
+
+.bio-sys-scroll-btn:last-child {
+  border-bottom: none;
+  border-top: 1px solid #9d174d;
+}
+
+.bio-sys-scroll-btn:hover {
+  background: #f472b6;
+}
+
+.bio-sys-scroll-btn:active {
+  background: #be185d;
+  color: #fff;
+}
+
+.bio-sys-vscroll-track {
+  flex: 1 1 auto;
+  min-height: 3rem;
+  margin: 2px 3px;
+  background: #fdf2f8;
+  border: 1px solid #9d174d;
+  box-shadow: inset 1px 1px 0 #404040;
+  position: relative;
+}
+
+.bio-sys-vscroll-thumb {
+  position: absolute;
+  top: 18%;
+  left: 2px;
+  right: 2px;
+  height: 28%;
+  background: linear-gradient(90deg, #f472b6, #ec4899);
+  border: 1px solid #701a75;
+  box-shadow: 1px 1px 0 #fff;
+  pointer-events: none;
 }
 
 /* Portrait fills circle edge-to-edge */
@@ -110,18 +196,26 @@ body {
     40px 40px,
     40px 40px;
   font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
   color: #f3f4f6;
   overflow-x: hidden;
   margin: 0;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-feature-settings: 'kern' 1;
+  letter-spacing: 0.02em;
 }
 
 .serif {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-feature-settings: 'kern' 1;
 }
 
 .window-border {

@@ -24,13 +24,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
 
-      <div className="h-44 bg-zinc-950 relative overflow-hidden border-b border-zinc-800">
+      <div className="h-44 bg-black relative overflow-hidden border-b border-zinc-800">
         {project.previewClass && <div className={project.previewClass} />}
         <img
           src={project.image}
           alt={project.title}
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#12101f] via-black/40 to-transparent pointer-events-none" />
         <div className="absolute top-2 left-2 mono text-[8px] text-pink-500/60 uppercase">
@@ -46,7 +46,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <p className="mono text-[9px] text-pink-400/50 uppercase tracking-[0.2em] mb-1">
             Research Object
           </p>
-          <h4 className="serif text-lg sm:text-xl leading-snug text-zinc-100 uppercase tracking-wide">
+          <h4 className="serif text-base sm:text-lg leading-snug text-zinc-100 uppercase tracking-[0.04em]">
             {project.title}
           </h4>
         </div>

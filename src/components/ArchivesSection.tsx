@@ -6,7 +6,7 @@ export function ArchivesSection() {
     <section id="work" className="col-span-12 mt-8">
       <div className="flex items-end justify-between mb-8 border-b-2 border-pink-500/30 pb-4">
         <div className="mono">
-          <h3 className="text-2xl uppercase font-bold tracking-widest text-pink-400 flex items-center gap-3">
+          <h3 className="text-2xl uppercase font-bold tracking-[0.12em] text-pink-400 flex items-center gap-3 leading-tight">
             <i className="ri-archive-drawer-line" aria-hidden />
             ARCHIVES_RESEARCH
           </h3>

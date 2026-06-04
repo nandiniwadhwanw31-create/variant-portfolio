@@ -1,6 +1,20 @@
+import { useCallback, useRef } from 'react'
 import { site } from '../data/site'
 
+const BIO_SCROLL_STEP = 56
+
 export function VariantAside() {
+  const bioScrollRef = useRef<HTMLParagraphElement>(null)
+
+  const scrollBio = useCallback((direction: 'up' | 'down') => {
+    const el = bioScrollRef.current
+    if (!el) return
+    el.scrollBy({
+      top: direction === 'down' ? BIO_SCROLL_STEP : -BIO_SCROLL_STEP,
+      behavior: 'smooth',
+    })
+  }, [])
+
   return (
     <div className="flex flex-col gap-6 flex-1 min-h-0 w-full">
       <div className="word-ident-shell relative h-[400px] shrink-0 overflow-hidden group window-border">
@@ -37,11 +51,15 @@ export function VariantAside() {
             <p className="serif text-lg italic text-[#701a75] leading-tight tracking-tight">
               {site.name}
             </p>
-            <p className="mono text-[9px] uppercase tracking-[0.25em] text-[#9d174d] mt-1 font-bold">
+            <p className="mono text-[9px] uppercase tracking-[0.2em] text-[#9d174d] mt-1 font-bold leading-snug">
               IDENT: {site.ident}
             </p>
-            <p className="mono text-[9px] text-[#be185d]/90 mt-0.5">
-              {site.location} · AGE: {site.age}
+            <p className="mono text-[9px] text-[#be185d]/90 mt-1 leading-relaxed tracking-wide">
+              {site.location}
+              <span className="mx-1.5 opacity-50" aria-hidden>
+                ·
+              </span>
+              AGE: {site.age}
             </p>
           </div>
         </div>
@@ -58,10 +76,36 @@ export function VariantAside() {
           </h2>
           <span className="mono text-[10px] opacity-50">VER 4.2.0</span>
         </div>
+
         <div className="bio-sys-scroll-wrap flex-1 min-h-0 border-t-2 border-black/15 pt-3">
-          <p className="bio-sys-scroll text-sm leading-relaxed overflow-y-auto scrollbar-custom pr-2 h-full">
+          <p
+            ref={bioScrollRef}
+            className="bio-sys-scroll text-[13px] leading-[1.65] overflow-y-auto pr-1 h-full tracking-[0.01em]"
+          >
             {site.bio}
           </p>
+
+          <div className="bio-sys-vscroll" aria-label="Scroll bio">
+            <button
+              type="button"
+              className="bio-sys-scroll-btn"
+              onClick={() => scrollBio('up')}
+              aria-label="Scroll up"
+            >
+              ▲
+            </button>
+            <div className="bio-sys-vscroll-track" aria-hidden>
+              <div className="bio-sys-vscroll-thumb" />
+            </div>
+            <button
+              type="button"
+              className="bio-sys-scroll-btn"
+              onClick={() => scrollBio('down')}
+              aria-label="Scroll down"
+            >
+              ▼
+            </button>
+          </div>
         </div>
       </div>
     </div>

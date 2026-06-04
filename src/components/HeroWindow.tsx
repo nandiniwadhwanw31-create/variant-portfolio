@@ -29,7 +29,7 @@ export function HeroWindow() {
           {site.nameLine1} <br />
           <span className="not-italic">{site.nameLine2}</span>
         </h1>
-        <p className="mono text-sm max-w-md border-l-4 border-purple-500 pl-4 py-1 leading-relaxed">
+        <p className="mono text-[13px] max-w-lg border-l-4 border-purple-500 pl-4 py-1 leading-[1.65] tracking-[0.01em]">
           {site.tagline}
         </p>
         <div className="mt-8 flex items-center gap-4">
