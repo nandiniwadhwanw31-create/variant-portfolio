@@ -166,6 +166,8 @@ export function CdPlayerPanel() {
             </div>
           </div>
 
+          <p className="cd-play-hint mono">( click ▶ play button to hear... )</p>
+
           <div className="cd-progress">
             <div
               className="cd-progress-track"

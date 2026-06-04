@@ -151,6 +151,22 @@
   letter-spacing: -0.01em;
 }
 
+.cd-play-hint {
+  margin: -2px 0 0;
+  padding: 5px 8px;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  color: #f8fafc;
+  text-align: center;
+  background: #0f172a;
+  border: 2px solid #fff;
+  border-color: #404040 #fff #fff #404040;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.45);
+  text-shadow: 0 0 8px rgba(248, 250, 252, 0.35);
+}
+
 .cd-progress {
   width: 100%;
   padding-top: 2px;
