@@ -2,8 +2,8 @@ import { site } from '../data/site'
 
 export function VariantAside() {
   return (
-    <>
-      <div className="word-ident-shell relative h-[400px] overflow-hidden group window-border">
+    <div className="flex flex-col gap-6 flex-1 min-h-0 w-full">
+      <div className="word-ident-shell relative h-[400px] shrink-0 overflow-hidden group window-border">
         <img
           src="/images/word-frame-pink.png"
           alt=""
@@ -12,7 +12,6 @@ export function VariantAside() {
         />
 
         <div className="word-doc-surface absolute top-[64px] left-[20px] right-[20px] bottom-[44px] z-10 flex flex-col overflow-hidden">
-          {/* Portrait — dominant focal point */}
           <div className="flex flex-1 items-center justify-center min-h-0 pt-2 pb-1">
             <div className="ident-portrait-ring relative w-[12.5rem] h-[12.5rem] shrink-0">
               <div
@@ -41,14 +40,16 @@ export function VariantAside() {
             <p className="mono text-[9px] uppercase tracking-[0.25em] text-[#9d174d] mt-1 font-bold">
               IDENT: {site.ident}
             </p>
-            <p className="mono text-[9px] text-[#be185d]/90 mt-0.5">{site.location}</p>
+            <p className="mono text-[9px] text-[#be185d]/90 mt-0.5">
+              {site.location} · AGE: {site.age}
+            </p>
           </div>
         </div>
       </div>
 
       <div
         id="about"
-        className="bio-sys-window window-border bg-[#d8b4fe] text-black p-6 flex flex-col h-[248px]"
+        className="bio-sys-window window-border bg-[#d8b4fe] text-black p-6 flex flex-col flex-1 min-h-[200px]"
       >
         <div className="flex justify-between items-start shrink-0 mb-3">
           <h2 className="mono text-sm font-bold uppercase flex items-center gap-2">
@@ -63,6 +64,6 @@ export function VariantAside() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   )
 }

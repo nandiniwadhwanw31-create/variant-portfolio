@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { site } from '../data/site'
+import { DinoRunner } from './effects/DinoRunner'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 
 const terminalLines = [
@@ -65,31 +66,36 @@ export function SignalConsole() {
                 <span className="text-zinc-500">FREQUENCY</span>
                 <span className="text-pink-400">{frequency} MHz</span>
               </div>
-              <div className="flex gap-1 h-8 items-end">
-                {[20, 50, 80, 100, 70, 40].map((h, i) => (
-                  <motion.div
-                    key={i}
-                    className="flex-1 bg-pink-500/80 rounded-sm"
-                    animate={
-                      reduced ? { height: `${h}%` } : { height: [`${h}%`, `${h * 0.4}%`, `${h}%`] }
-                    }
-                    transition={{ repeat: Infinity, duration: 0.8 + i * 0.1, repeatType: 'reverse' }}
-                  />
-                ))}
-              </div>
+              <DinoRunner />
               <p className="text-zinc-500 uppercase tracking-widest text-[9px]">Signal Strength: 94%</p>
             </div>
 
-            <a
-              href={`mailto:${site.email}?subject=Signal%20from%20Portfolio`}
-              data-cursor="hover"
-              className="window-border bg-[#ff7eb9] text-black hover:bg-pink-300 px-8 py-5 mono text-center text-sm uppercase font-bold flex items-center justify-center gap-3 transition-colors"
-            >
-              <i className="ri-radar-line text-lg" aria-hidden />
-              Initiate Contact
-            </a>
-
-            <p className="mono text-[10px] text-zinc-600 text-center">{site.email}</p>
+            <div className="flex flex-col gap-3">
+              <a
+                href={`mailto:${site.email}?subject=Signal%20from%20Portfolio`}
+                data-cursor="hover"
+                className="window-border bg-[#ff7eb9] text-black hover:bg-pink-300 px-8 py-5 mono text-center text-sm uppercase font-bold flex items-center justify-center gap-3 transition-colors"
+              >
+                <i className="ri-mail-send-line text-lg" aria-hidden />
+                Initiate Contact
+              </a>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <a
+                  href={`mailto:${site.email}?subject=Signal%20from%20Portfolio`}
+                  data-cursor="hover"
+                  className="window-border bg-black text-pink-400 hover:bg-pink-950 px-4 py-3 mono text-[10px] uppercase text-center transition-colors truncate"
+                >
+                  {site.email}
+                </a>
+                <a
+                  href={`tel:${site.phone}`}
+                  data-cursor="hover"
+                  className="window-border bg-black text-pink-400 hover:bg-pink-950 px-4 py-3 mono text-[10px] uppercase text-center transition-colors"
+                >
+                  {site.phoneDisplay}
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@
 @import './styles/cd-player.css';
 @import './styles/ghost-terminal.css';
 @import './styles/archive-cards.css';
+@import './styles/dino-runner.css';
 
 :root {
   --cyber-pink: #ff7eb9;
@@ -55,8 +56,12 @@ html {
   flex-direction: column;
 }
 
+.bio-sys-window {
+  flex: 1 1 auto;
+}
+
 .bio-sys-scroll {
-  min-height: 7.5rem;
+  min-height: 8rem;
   max-height: 100%;
 }
 

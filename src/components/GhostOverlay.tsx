@@ -127,8 +127,6 @@ export function GhostOverlay() {
                 <a href={`mailto:${site.email}`} className="ghost-link">
                   {site.email}
                 </a>
-                <br />
-                &gt;&gt; TWITTER: <span className="text-[#a5f3fc]">[Your Handle]</span>
               </p>
               <GhostExtract>Let&apos;s build something terrifyingly beautiful.</GhostExtract>
             </GhostSection>

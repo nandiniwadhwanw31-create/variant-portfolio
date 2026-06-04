@@ -27,7 +27,7 @@ function App() {
           <CdPlayerPanel />
         </section>
 
-        <aside className="col-span-12 lg:col-span-5 flex flex-col gap-6">
+        <aside className="col-span-12 lg:col-span-5 flex flex-col gap-6 lg:self-stretch">
           <VariantAside />
         </aside>
 
