@@ -28,40 +28,33 @@
   bottom: 17.5%;
   left: 1.8%;
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.45rem 0.4rem 0.7rem;
   overflow: hidden;
 }
 
-.wmp-ident-stack {
-  container-type: size;
-  container-name: wmp-ident;
+.wmp-ident-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  width: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  min-height: 0;
+  gap: 0.4rem;
+  max-width: calc(100% - 0.5rem);
+  max-height: calc(100% - 0.5rem);
+  z-index: 1;
 }
 
-.wmp-ident-portrait-wrap {
-  flex: 0 0 auto;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.wmp-ident-photo-unit {
+  position: relative;
+  flex-shrink: 0;
 }
 
-.wmp-ident-portrait-wrap .ident-portrait-ring {
-  width: min(96cqw, calc(100cqh - 3.4rem), 20rem);
-  height: min(96cqw, calc(100cqh - 3.4rem), 20rem);
+.wmp-ident-photo-unit .ident-portrait-ring {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
   max-width: 100%;
-  max-height: 100%;
   aspect-ratio: 1;
   flex-shrink: 0;
 }
@@ -74,8 +67,7 @@
 .wmp-ident-caption {
   flex: 0 0 auto;
   width: 100%;
-  max-width: 100%;
-  padding: 0.2rem 0.25rem 0;
+  padding: 0.15rem 0.2rem 0;
   text-align: center;
   overflow: hidden;
   border-top: 1px solid rgba(255, 126, 185, 0.35);
@@ -84,7 +76,7 @@
 .wmp-ident-caption .wmp-ident-name {
   margin: 0;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.05rem, 7.5cqw, 1.3rem);
+  font-size: clamp(0.95rem, 6.5cqw, 1.125rem);
   font-style: italic;
   line-height: 1.12;
   color: #fdf2f8;
@@ -92,9 +84,9 @@
 }
 
 .wmp-ident-caption .wmp-ident-meta {
-  margin: 0.18rem 0 0;
+  margin: 0.2rem 0 0;
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  font-size: clamp(9px, 2.6cqw, 11px);
+  font-size: clamp(7px, 2.2cqw, 9px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.16em;
@@ -106,7 +98,7 @@
 .wmp-ident-caption .wmp-ident-sub {
   margin: 0.08rem 0 0;
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  font-size: clamp(9px, 2.4cqw, 11px);
+  font-size: clamp(7px, 2cqw, 9px);
   line-height: 1.2;
   letter-spacing: 0.08em;
   color: rgba(253, 242, 248, 0.92);
@@ -114,8 +106,8 @@
 }
 
 @media (max-width: 1023px) {
-  .wmp-ident-portrait-wrap .ident-portrait-ring {
-    width: min(94cqw, calc(100cqh - 3.25rem), 18rem);
-    height: min(94cqw, calc(100cqh - 3.25rem), 18rem);
+  .wmp-ident-photo-unit .ident-portrait-ring {
+    width: min(15rem, 78vw);
+    height: min(15rem, 78vw);
   }
 }

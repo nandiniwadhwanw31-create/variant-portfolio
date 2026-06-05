@@ -26,8 +26,8 @@ export function VariantAside() {
         />
 
         <div className="wmp-ident-viewport">
-          <div className="wmp-ident-stack">
-            <div className="wmp-ident-portrait-wrap">
+          <div className="wmp-ident-centered">
+            <div className="wmp-ident-photo-unit">
               <div className="ident-portrait-ring relative">
                 <div
                   className="ident-portrait-glow absolute -inset-2 rounded-full bg-gradient-to-br from-pink-400 via-fuchsia-500 to-pink-600 opacity-50 blur-md"
