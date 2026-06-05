@@ -58,7 +58,7 @@ html {
   flex-direction: row;
   align-items: stretch;
   gap: 6px;
-  height: 11rem;
+  height: 12.5rem;
 }
 
 .bio-sys-window {
