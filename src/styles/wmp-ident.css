@@ -15,13 +15,13 @@
   user-select: none;
 }
 
-/* Black display viewport — tuned to wmp-ident-frame.png (482×510) */
+/* Black display viewport — wmp-ident-frame.png */
 .wmp-ident-viewport {
   position: absolute;
-  top: 14.9%;
-  right: 5.4%;
-  bottom: 31%;
-  left: 5.4%;
+  top: 19.2%;
+  right: 2.8%;
+  bottom: 15.4%;
+  left: 2%;
   box-sizing: border-box;
   container-type: size;
   container-name: wmp-ident;
@@ -29,7 +29,7 @@
   grid-template-rows: minmax(0, 1fr) auto;
   align-items: stretch;
   gap: 0.12rem;
-  padding: 0.12rem 0.2rem 0.1rem;
+  padding: 1.75rem 0.2rem 0.35rem;
   overflow: hidden;
 }
 
@@ -40,6 +40,7 @@
   width: 100%;
   display: grid;
   place-items: center;
+  align-items: end;
 }
 
 .wmp-ident-portrait-wrap .ident-portrait-ring {
@@ -56,7 +57,7 @@
 
 .wmp-ident-caption {
   width: 100%;
-  padding: 0.15rem 0.05rem 0.05rem;
+  padding: 0.15rem 0.05rem 0.1rem;
   text-align: center;
   overflow: hidden;
   border-top: 1px solid rgba(255, 126, 185, 0.4);
@@ -96,8 +97,7 @@
 
 @media (max-width: 1023px) {
   .wmp-ident-viewport {
-    top: 14.6%;
-    bottom: 30.6%;
+    padding-top: 1.5rem;
   }
 
   .wmp-ident-portrait-wrap .ident-portrait-ring {
