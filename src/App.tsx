@@ -4,6 +4,7 @@ import { CrtOverlay } from './components/CrtOverlay'
 import { CustomCursor } from './components/effects/CustomCursor'
 import { GhostOverlay } from './components/GhostOverlay'
 import { CdPlayerPanel } from './components/CdPlayerPanel'
+import { NotepadGuidePanel } from './components/NotepadGuidePanel'
 import { HeroWindow } from './components/HeroWindow'
 import { Nav } from './components/Nav'
 import { Scanline } from './components/Scanline'
@@ -28,6 +29,7 @@ function App() {
         <section className="col-span-12 lg:col-span-7 flex flex-col gap-6 w-full min-w-0">
           <HeroWindow />
           <CdPlayerPanel />
+          <NotepadGuidePanel />
         </section>
 
         <aside className="col-span-12 lg:col-span-5 flex flex-col gap-6 lg:self-stretch w-full min-w-0">

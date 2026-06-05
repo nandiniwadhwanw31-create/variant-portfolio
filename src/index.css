@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import './styles/cd-player.css';
 @import './styles/wmp-ident.css';
+@import './styles/notepad-guide.css';
 @import './styles/ghost-terminal.css';
 @import './styles/archive-cards.css';
 @import './styles/dino-runner.css';
