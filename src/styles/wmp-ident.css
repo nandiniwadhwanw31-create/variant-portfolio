@@ -20,46 +20,49 @@
   user-select: none;
 }
 
-/* Black display canvas — between menu chrome and Ready bar */
+/* Black media screen only — above Ready / transport chrome */
 .wmp-ident-viewport {
   position: absolute;
-  top: 19%;
+  top: 18.8%;
   right: 2.5%;
-  bottom: 17%;
+  bottom: 17.5%;
   left: 1.8%;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
-  padding: 0.5rem 0.45rem 0.65rem;
+  padding: 0.35rem 0.4rem 0.85rem;
   overflow: hidden;
 }
 
 .wmp-ident-stack {
+  container-type: size;
+  container-name: wmp-ident;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
+  justify-content: flex-start;
+  gap: 0.3rem;
   width: 100%;
   max-width: 100%;
   max-height: 100%;
   min-height: 0;
+  transform: translateY(-6px);
 }
 
 .wmp-ident-portrait-wrap {
   flex: 0 0 auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .wmp-ident-portrait-wrap .ident-portrait-ring {
-  width: 280px;
-  height: 280px;
-  max-width: min(280px, 100%);
-  max-height: min(280px, calc(100% - 7.5rem));
+  width: min(320px, 94cqw, calc(100cqh - 4.75rem));
+  height: min(320px, 94cqw, calc(100cqh - 4.75rem));
+  max-width: 100%;
+  max-height: 100%;
   aspect-ratio: 1;
   flex-shrink: 0;
 }
@@ -73,47 +76,53 @@
   flex: 0 0 auto;
   width: 100%;
   max-width: 100%;
-  padding: 0.25rem 0.35rem 0;
+  padding: 0.15rem 0.2rem 0;
+  margin-bottom: 0.35rem;
   text-align: center;
   overflow: hidden;
   border-top: 1px solid rgba(255, 126, 185, 0.35);
+  transform: translateY(-28px);
 }
 
 .wmp-ident-caption .wmp-ident-name {
   margin: 0;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 20px;
+  font-size: clamp(0.95rem, 6cqw, 1.125rem);
   font-style: italic;
-  line-height: 1.15;
+  line-height: 1.12;
   color: #fdf2f8;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85);
 }
 
 .wmp-ident-caption .wmp-ident-meta {
-  margin: 0.25rem 0 0;
+  margin: 0.2rem 0 0;
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  font-size: 14px;
+  font-size: clamp(7px, 2.2cqw, 9px);
   font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: 0.12em;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #fbcfe8;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 .wmp-ident-caption .wmp-ident-sub {
-  margin: 0.15rem 0 0;
+  margin: 0.08rem 0 0;
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  font-size: 14px;
-  line-height: 1.25;
-  letter-spacing: 0.06em;
+  font-size: clamp(7px, 2cqw, 9px);
+  line-height: 1.2;
+  letter-spacing: 0.08em;
   color: rgba(253, 242, 248, 0.92);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 @media (max-width: 1023px) {
   .wmp-ident-portrait-wrap .ident-portrait-ring {
-    width: min(280px, 88vw);
-    height: min(280px, 88vw);
+    width: min(280px, 92cqw, calc(100cqh - 4.5rem));
+    height: min(280px, 92cqw, calc(100cqh - 4.5rem));
+  }
+
+  .wmp-ident-caption {
+    transform: translateY(-20px);
   }
 }

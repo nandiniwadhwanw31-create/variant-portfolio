@@ -58,7 +58,7 @@ html {
   flex-direction: row;
   align-items: stretch;
   gap: 6px;
-  height: 13.25rem;
+  height: 11rem;
 }
 
 .bio-sys-window {
@@ -70,9 +70,6 @@ html {
   min-width: 0;
   height: 100%;
   margin: 0;
-  padding-right: 0.35rem;
-  font-size: 18px;
-  line-height: 1.5;
   scrollbar-width: thin;
   scrollbar-color: #be185d #f3e8ff;
 }
