@@ -451,6 +451,39 @@
   letter-spacing: 0.03em;
 }
 
+/* Research archive — equal-height cards, centered orphan on tablet */
+.archives-research-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .archives-research-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .archives-research-grid > article:last-child:nth-child(3):nth-last-child(1) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 22rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .archives-research-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .archives-research-grid > article:last-child:nth-child(3):nth-last-child(1) {
+    grid-column: auto;
+    justify-self: stretch;
+    width: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .archive-canvas {
     min-height: auto;

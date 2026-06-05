@@ -63,7 +63,7 @@ export function ArchiveMapSection() {
   return (
     <div
       id="archive-map-section"
-      className="w-full flex flex-col relative overflow-hidden border-t-2 border-pink-500/20 mt-8 pt-12"
+      className="w-full flex flex-col relative overflow-hidden border-t-2 border-pink-500/20 mt-8 pt-12 scroll-mt-28"
     >
       <div className="flex items-center gap-4 mb-8">
         <h1 className="mono text-4xl font-bold tracking-tighter text-white flex items-center gap-4">

@@ -3,7 +3,7 @@ import { ProjectCard } from './ProjectCard'
 
 export function ArchivesSection() {
   return (
-    <section id="work" className="col-span-12 mt-8">
+    <section id="work" className="col-span-12 mt-8 scroll-mt-28">
       <div className="flex items-end justify-between mb-8 border-b-2 border-pink-500/30 pb-4">
         <div className="mono">
           <h3 className="text-2xl uppercase font-bold tracking-[0.12em] text-pink-400 flex items-center gap-3 leading-tight">
@@ -23,7 +23,7 @@ export function ArchivesSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="archives-research-grid">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

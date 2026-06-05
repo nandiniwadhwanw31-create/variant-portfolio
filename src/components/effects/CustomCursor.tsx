@@ -54,8 +54,8 @@ export function CustomCursor() {
         y,
         translateX: '-50%',
         translateY: '-50%',
-        width: hovering ? 48 : 36,
-        height: hovering ? 48 : 36,
+        width: hovering ? 40 : 30,
+        height: hovering ? 40 : 30,
       }}
       animate={
         reduced

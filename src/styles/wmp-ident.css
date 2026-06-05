@@ -1,0 +1,89 @@
+/* Windows Media Player–style ident panel */
+.wmp-ident-shell {
+  position: relative;
+  width: 100%;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.wmp-ident-frame {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+  pointer-events: none;
+  user-select: none;
+}
+
+.wmp-ident-viewport {
+  position: absolute;
+  top: 14.2%;
+  right: 6%;
+  bottom: 30.8%;
+  left: 6%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.5rem 0.2rem;
+  overflow: hidden;
+}
+
+.wmp-ident-viewport .ident-portrait-ring {
+  width: min(7.25rem, 42vw, 58%);
+  height: min(7.25rem, 42vw, 58%);
+  flex-shrink: 1;
+  min-height: 0;
+  max-height: 58%;
+  aspect-ratio: 1;
+}
+
+.wmp-ident-caption {
+  width: 100%;
+  flex-shrink: 0;
+  max-height: 38%;
+  padding: 0 0.15rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.wmp-ident-caption .wmp-ident-name {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(0.8rem, 2.4vw, 1rem);
+  font-style: italic;
+  line-height: 1.15;
+  color: #fdf2f8;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85);
+}
+
+.wmp-ident-caption .wmp-ident-meta {
+  margin: 0.2rem 0 0;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: clamp(6px, 1.6vw, 8px);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fbcfe8;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.wmp-ident-caption .wmp-ident-sub {
+  margin: 0.15rem 0 0;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: clamp(6px, 1.5vw, 8px);
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  color: rgba(253, 242, 248, 0.88);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 1023px) {
+  .wmp-ident-viewport .ident-portrait-ring {
+    width: min(6.5rem, 38vw);
+    height: min(6.5rem, 38vw);
+  }
+}

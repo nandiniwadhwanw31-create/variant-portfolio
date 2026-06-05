@@ -6,7 +6,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="window-border bg-[#12101f] overflow-hidden flex flex-col group hover:translate-y-[-4px] transition-transform">
+    <article className="window-border bg-[#12101f] overflow-hidden flex flex-col h-full group hover:translate-y-[-4px] transition-transform">
       <div className="px-3 py-1.5 flex justify-between items-center bg-black border-b-2 border-pink-500/40">
         <div className="flex flex-col gap-0.5 min-w-0">
           <span className="mono text-[10px] text-pink-400/90 font-bold uppercase tracking-tighter truncate">

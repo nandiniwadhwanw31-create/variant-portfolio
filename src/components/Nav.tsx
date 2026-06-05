@@ -23,15 +23,15 @@ export function Nav() {
           <a href="#about" className="hover:text-pink-400 transition-colors" data-cursor="hover">
             About
           </a>
-          <a href="#work" className="hover:text-pink-400 transition-colors" data-cursor="hover">
-            Archives
-          </a>
           <a
             href="#archive-map-section"
             className="hover:text-pink-400 transition-colors text-pink-300"
             data-cursor="hover"
           >
             Background_Archive
+          </a>
+          <a href="#work" className="hover:text-pink-400 transition-colors" data-cursor="hover">
+            Research_Archive
           </a>
           <a href="#contact" className="hover:text-pink-400 transition-colors" data-cursor="hover">
             Signal
