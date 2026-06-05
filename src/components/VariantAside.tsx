@@ -78,7 +78,7 @@ export function VariantAside() {
         <div className="bio-sys-scroll-wrap border-t-2 border-black/15 pt-3">
           <p
             ref={bioScrollRef}
-            className="bio-sys-scroll text-[13px] leading-[1.65] overflow-y-auto pr-1 tracking-[0.01em]"
+            className="bio-sys-scroll overflow-y-auto tracking-[0.01em]"
           >
             {site.bio}
           </p>
