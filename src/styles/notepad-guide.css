@@ -8,26 +8,27 @@
   line-height: 0;
 }
 
+/* Clip 2–3px white artifact on right/bottom edges */
 .notepad-guide-frame {
   display: block;
-  width: calc(100% + 6px);
+  width: calc(100% + 5px);
   max-width: none;
   height: auto;
-  margin: -3px;
+  margin: 0 -3px -3px 0;
   vertical-align: top;
   pointer-events: none;
   user-select: none;
 }
 
-/* Lined document only — below menu bar (698×382) */
+/* White lined canvas only — below menu divider */
 .notepad-guide-viewport {
   position: absolute;
-  top: 23.8%;
-  right: 14.2%;
-  bottom: 7.5%;
-  left: 3%;
+  top: 24.2%;
+  right: 14.5%;
+  bottom: 8%;
+  left: 3.2%;
   box-sizing: border-box;
-  padding: 0.55rem 0.75rem 0.45rem 0.85rem;
+  padding: 20px 24px 16px;
   overflow: hidden;
   background: transparent;
 }
@@ -38,13 +39,23 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  font-family: 'Segoe UI', Tahoma, 'Lucida Console', 'Courier New', sans-serif;
-  font-size: clamp(16px, 2.35vw, 18px);
-  line-height: 1.5;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-size: 1.5rem;
+  line-height: 1.4;
   color: #0f172a;
   letter-spacing: 0.01em;
   scrollbar-width: thin;
   scrollbar-color: #94a3b8 #f8fafc;
+}
+
+@media (max-width: 640px) {
+  .notepad-guide-text {
+    font-size: clamp(1.05rem, 4.2vw, 1.5rem);
+  }
+
+  .notepad-guide-viewport {
+    padding: 14px 16px 12px;
+  }
 }
 
 .notepad-guide-text::-webkit-scrollbar {

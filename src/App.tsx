@@ -32,7 +32,7 @@ function App() {
           <NotepadGuidePanel />
         </section>
 
-        <aside className="col-span-12 lg:col-span-5 flex flex-col gap-6 lg:self-stretch w-full min-w-0">
+        <aside className="col-span-12 lg:col-span-5 flex flex-col gap-6 lg:self-start w-full min-w-0">
           <VariantAside />
         </aside>
 

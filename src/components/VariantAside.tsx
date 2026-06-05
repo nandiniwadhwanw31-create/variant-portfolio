@@ -16,7 +16,7 @@ export function VariantAside() {
   }, [])
 
   return (
-    <div className="flex flex-col gap-6 flex-1 min-h-0 w-full">
+    <div className="flex flex-col gap-6 w-full">
       <div className="wmp-ident-shell shrink-0">
         <img
           src="/images/wmp-ident-frame.png"
@@ -65,7 +65,7 @@ export function VariantAside() {
 
       <div
         id="about"
-        className="bio-sys-window window-border bg-[#d8b4fe] text-black p-6 flex flex-col flex-1 min-h-[200px] scroll-mt-28"
+        className="bio-sys-window window-border bg-[#d8b4fe] text-black p-6 flex flex-col shrink-0 scroll-mt-28"
       >
         <div className="flex justify-between items-start shrink-0 mb-3">
           <h2 className="mono text-sm font-bold uppercase flex items-center gap-2">
@@ -75,10 +75,10 @@ export function VariantAside() {
           <span className="mono text-[10px] opacity-50">VER 4.2.0</span>
         </div>
 
-        <div className="bio-sys-scroll-wrap flex-1 min-h-0 border-t-2 border-black/15 pt-3">
+        <div className="bio-sys-scroll-wrap border-t-2 border-black/15 pt-3">
           <p
             ref={bioScrollRef}
-            className="bio-sys-scroll text-[13px] leading-[1.65] overflow-y-auto pr-1 h-full tracking-[0.01em]"
+            className="bio-sys-scroll text-[13px] leading-[1.65] overflow-y-auto pr-1 tracking-[0.01em]"
           >
             {site.bio}
           </p>
