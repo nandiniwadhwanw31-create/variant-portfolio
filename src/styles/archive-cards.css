@@ -451,6 +451,24 @@
   letter-spacing: 0.03em;
 }
 
+/* Research archive — image preview label */
+.project-card-img-preview {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: #f9a8d4;
+  text-shadow:
+    0 0 8px rgba(255, 0, 127, 0.65),
+    0 1px 2px rgba(0, 0, 0, 0.95);
+}
+
+.archives-research-grid article:hover .project-card-img-preview {
+  color: #fce7f3;
+}
+
 /* Research archive — equal-height cards, centered orphan on tablet */
 .archives-research-grid {
   display: grid;

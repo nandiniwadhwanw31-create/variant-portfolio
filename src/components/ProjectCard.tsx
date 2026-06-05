@@ -33,10 +33,20 @@ export function ProjectCard({ project }: ProjectCardProps) {
           className="absolute inset-0 w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#12101f] via-black/40 to-transparent pointer-events-none" />
-        <div className="absolute top-2 left-2 mono text-[8px] text-pink-500/60 uppercase">
+        <a
+          href={project.image}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cursor="hover"
+          className="absolute inset-0 z-[5] flex items-start justify-center pt-2 px-2"
+          aria-label="click to preview image"
+        >
+          <span className="project-card-img-preview mono">click to preview image</span>
+        </a>
+        <div className="absolute top-2 left-2 mono text-[8px] text-pink-500/60 uppercase pointer-events-none">
           IDX_{project.id}
         </div>
-        <div className="absolute bottom-2 right-2 mono text-[8px] text-zinc-500 uppercase">
+        <div className="absolute bottom-2 right-2 mono text-[8px] text-zinc-500 uppercase pointer-events-none">
           ORIGIN: {project.source}
         </div>
       </div>
