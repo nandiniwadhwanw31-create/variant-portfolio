@@ -15,75 +15,85 @@
   user-select: none;
 }
 
+/* Black display viewport — tuned to wmp-ident-frame.png (482×510) */
 .wmp-ident-viewport {
   position: absolute;
-  top: 14.2%;
-  right: 6%;
-  bottom: 30.8%;
-  left: 6%;
+  top: 15.1%;
+  right: 5.6%;
+  bottom: 31.2%;
+  left: 5.6%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.5rem 0.2rem;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 0.2rem;
+  padding: 0.2rem 0.35rem 0.15rem;
   overflow: hidden;
 }
 
-.wmp-ident-viewport .ident-portrait-ring {
-  width: min(7.25rem, 42vw, 58%);
-  height: min(7.25rem, 42vw, 58%);
-  flex-shrink: 1;
+.wmp-ident-portrait-wrap {
+  flex: 1 1 0;
   min-height: 0;
-  max-height: 58%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wmp-ident-portrait-wrap .ident-portrait-ring {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   aspect-ratio: 1;
+  flex-shrink: 0;
 }
 
 .wmp-ident-caption {
+  flex: 0 0 auto;
   width: 100%;
-  flex-shrink: 0;
-  max-height: 38%;
-  padding: 0 0.15rem;
+  padding: 0.2rem 0.1rem 0;
   text-align: center;
   overflow: hidden;
+  border-top: 1px solid rgba(255, 126, 185, 0.35);
 }
 
 .wmp-ident-caption .wmp-ident-name {
   margin: 0;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(0.8rem, 2.4vw, 1rem);
+  font-size: clamp(0.85rem, 2.8vw, 1.05rem);
   font-style: italic;
-  line-height: 1.15;
+  line-height: 1.1;
   color: #fdf2f8;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85);
 }
 
 .wmp-ident-caption .wmp-ident-meta {
-  margin: 0.2rem 0 0;
+  margin: 0.18rem 0 0;
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  font-size: clamp(6px, 1.6vw, 8px);
+  font-size: clamp(7px, 1.75vw, 9px);
   font-weight: 700;
-  line-height: 1.35;
-  letter-spacing: 0.14em;
+  line-height: 1.25;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #fbcfe8;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 .wmp-ident-caption .wmp-ident-sub {
-  margin: 0.15rem 0 0;
+  margin: 0.12rem 0 0;
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  font-size: clamp(6px, 1.5vw, 8px);
-  line-height: 1.35;
-  letter-spacing: 0.08em;
-  color: rgba(253, 242, 248, 0.88);
+  font-size: clamp(7px, 1.65vw, 9px);
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+  color: rgba(253, 242, 248, 0.9);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 @media (max-width: 1023px) {
-  .wmp-ident-viewport .ident-portrait-ring {
-    width: min(6.5rem, 38vw);
-    height: min(6.5rem, 38vw);
+  .wmp-ident-viewport {
+    top: 14.8%;
+    bottom: 30.8%;
   }
 }

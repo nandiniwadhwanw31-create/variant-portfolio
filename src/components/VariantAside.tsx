@@ -26,7 +26,8 @@ export function VariantAside() {
         />
 
         <div className="wmp-ident-viewport">
-          <div className="ident-portrait-ring relative shrink-0">
+          <div className="wmp-ident-portrait-wrap">
+          <div className="ident-portrait-ring relative">
             <div
               className="ident-portrait-glow absolute -inset-2 rounded-full bg-gradient-to-br from-pink-400 via-fuchsia-500 to-pink-600 opacity-50 blur-md"
               aria-hidden
@@ -43,6 +44,7 @@ export function VariantAside() {
                 loading="lazy"
               />
             </div>
+          </div>
           </div>
 
           <div className="wmp-ident-caption">
