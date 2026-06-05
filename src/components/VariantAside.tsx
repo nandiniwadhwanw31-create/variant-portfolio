@@ -26,37 +26,39 @@ export function VariantAside() {
         />
 
         <div className="wmp-ident-viewport">
-          <div className="wmp-ident-portrait-wrap">
-            <div className="ident-portrait-ring relative">
-            <div
-              className="ident-portrait-glow absolute -inset-2 rounded-full bg-gradient-to-br from-pink-400 via-fuchsia-500 to-pink-600 opacity-50 blur-md"
-              aria-hidden
-            />
-            <div
-              className="absolute inset-0 rounded-full border-[3px] border-pink-500 border-dashed animate-[spin_22s_linear_infinite] shadow-[0_0_20px_rgba(236,72,153,0.45)]"
-              aria-hidden
-            />
-            <div className="absolute inset-[5px] rounded-full overflow-hidden border-[3px] border-pink-600 bg-pink-200 shadow-inner">
-              <img
-                src="/images/profile.jpg"
-                alt={site.name}
-                className="ident-portrait-img w-full h-full object-cover"
-                loading="lazy"
-              />
+          <div className="wmp-ident-stack">
+            <div className="wmp-ident-portrait-wrap">
+              <div className="ident-portrait-ring relative">
+                <div
+                  className="ident-portrait-glow absolute -inset-2 rounded-full bg-gradient-to-br from-pink-400 via-fuchsia-500 to-pink-600 opacity-50 blur-md"
+                  aria-hidden
+                />
+                <div
+                  className="absolute inset-0 rounded-full border-[3px] border-pink-500 border-dashed animate-[spin_22s_linear_infinite] shadow-[0_0_20px_rgba(236,72,153,0.45)]"
+                  aria-hidden
+                />
+                <div className="absolute inset-[5px] rounded-full overflow-hidden border-[3px] border-pink-600 bg-pink-200 shadow-inner">
+                  <img
+                    src="/images/profile.jpg"
+                    alt={site.name}
+                    className="ident-portrait-img w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </div>
-            </div>
-          </div>
 
-          <div className="wmp-ident-caption">
-            <p className="wmp-ident-name">{site.name}</p>
-            <p className="wmp-ident-meta">IDENT: {site.ident}</p>
-            <p className="wmp-ident-sub">
-              {site.location}
-              <span className="mx-1 opacity-50" aria-hidden>
-                ·
-              </span>
-              AGE: {site.age}
-            </p>
+            <div className="wmp-ident-caption">
+              <p className="wmp-ident-name">{site.name}</p>
+              <p className="wmp-ident-meta">IDENT: {site.ident}</p>
+              <p className="wmp-ident-sub">
+                {site.location}
+                <span className="mx-1 opacity-50" aria-hidden>
+                  ·
+                </span>
+                AGE: {site.age}
+              </p>
+            </div>
           </div>
         </div>
       </div>
